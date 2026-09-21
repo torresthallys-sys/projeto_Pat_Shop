@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PataVida Pet Shop — Cuidado, Amor e Bem-Estar Animal</title>
+  <meta name="description" content="PataVida Pet Shop — Banho, tosa, higiene e cuidados especiais para o seu pet. Agende agora e descubra o melhor cuidado para seu animal." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner container">
+      <a href="#inicio" class="navbar__logo">
+        <span class="logo-icon">🐾</span>
+        <span class="logo-text">PataVida<span class="logo-accent">.</span></span>
+      </a>
+
+      <nav class="navbar__nav" id="navMenu">
+        <a href="#servicos" class="nav-link">Serviços</a>
+        <a href="#sobre" class="nav-link">Sobre</a>
+        <a href="#galeria" class="nav-link">Galeria</a>
+        <a href="#contato" class="nav-link">Contato</a>
+        <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço." target="_blank" class="btn btn--nav" aria-label="Agendar via WhatsApp">Agendar agora</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       HERO / CAPA
+  ============================================================ -->
+  <section class="hero" id="inicio">
+    <div class="hero__video-wrap">
+      <video class="hero__video" autoplay muted loop playsinline>
+        <source src="assets/video/hero-video.mp4" type="video/mp4" />
+      </video>
+      <div class="hero__overlay"></div>
+    </div>
+
+    <div class="hero__content container">
+      <p class="hero__tag animate-hero" data-delay="0">🐾 Cuidado que faz diferença</p>
+      <h1 class="hero__title animate-hero" data-delay="1">
+        Seu Pet Merece<br />
+        <em>O Melhor de Todos</em>
+      </h1>
+      <p class="hero__desc animate-hero" data-delay="2">
+        Banho, tosa, higiene e cuidados especiais com carinho e profissionalismo.
+        Agende hoje e deixe seu melhor amigo em boas mãos.
+      </p>
+      <div class="hero__actions animate-hero" data-delay="3">
+        <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço." target="_blank" class="btn btn--primary btn--lg" aria-label="Agendar via WhatsApp">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Agendar agora
+        </a>
+        <a href="#servicos" class="btn btn--ghost btn--lg">Conheça nossos serviços</a>
+      </div>
+    </div>
+
+    <div class="hero__scroll animate-hero" data-delay="4">
+      <span>Role para baixo</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TRUST BAR
+  ============================================================ -->
+  <section class="trust-bar reveal">
+    <div class="container trust-bar__inner">
+      <div class="trust-item">
+        <span class="trust-icon">⭐</span>
+        <div>
+          <strong>+5.000</strong>
+          <span>Pets atendidos</span>
+        </div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <span class="trust-icon">🏆</span>
+        <div>
+          <strong>8 anos</strong>
+          <span>De experiência</span>
+        </div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <span class="trust-icon">❤️</span>
+        <div>
+          <strong>98%</strong>
+          <span>Satisfação dos tutores</span>
+        </div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <span class="trust-icon">🔒</span>
+        <div>
+          <strong>Ambiente</strong>
+          <span>100% seguro</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SERVIÇOS
+  ============================================================ -->
+  <section class="services" id="servicos">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-tag">O que oferecemos</p>
+        <h2 class="section-title">Serviços pensados<br /><em>para cada pet</em></h2>
+        <p class="section-desc">Do banho à tosa, cuidamos de cada detalhe com atenção, carinho e profissionalismo que seu animal merece.</p>
+      </div>
+
+      <div class="services__grid">
+        <div class="service-card reveal-card">
+          <div class="service-card__icon">🛁</div>
+          <h3>Banho Completo</h3>
+          <p>Higiene profunda com produtos premium, secagem e perfumação especial. Seu pet sai cheiroso e feliz.</p>
+          <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20agendar%20um%20banho." target="_blank" class="service-card__link">Agendar →</a>
+        </div>
+
+        <div class="service-card reveal-card">
+          <div class="service-card__icon">✂️</div>
+          <h3>Tosa Especializada</h3>
+          <p>Tosa higiênica ou artística, seguindo o padrão da raça ou o estilo que você preferir.</p>
+          <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20agendar%20uma%20tosa." target="_blank" class="service-card__link">Agendar →</a>
+        </div>
+
+        <div class="service-card reveal-card">
+          <div class="service-card__icon">🪥</div>
+          <h3>Higiene Oral</h3>
+          <p>Escovação e limpeza dos dentes para garantir a saúde bucal e o bem-estar do seu pet.</p>
+          <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20higiene%20oral." target="_blank" class="service-card__link">Saiba mais →</a>
+        </div>
+
+        <div class="service-card reveal-card">
+          <div class="service-card__icon">💅</div>
+          <h3>Corte de Unhas</h3>
+          <p>Corte seguro e preciso das unhas, evitando desconforto e machucados para o seu pet.</p>
+          <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20agendar%20corte%20de%20unhas." target="_blank" class="service-card__link">Agendar →</a>
+        </div>
+
+        <div class="service-card reveal-card">
+          <div class="service-card__icon">🌿</div>
+          <h3>Cuidados Especiais</h3>
+          <p>Hidratação, tratamentos para pele e pelo, e cuidados individualizados para pets com necessidades especiais.</p>
+          <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20saber%20sobre%20cuidados%20especiais." target="_blank" class="service-card__link">Saiba mais →</a>
+        </div>
+
+        <div class="service-card reveal-card">
+          <div class="service-card__icon">🛍️</div>
+          <h3>Pet Shop & Acessórios</h3>
+          <p>Ração, brinquedos, coleiras, roupinhas e tudo que seu pet precisa em um só lugar.</p>
+          <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20produtos." target="_blank" class="service-card__link">Ver produtos →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SOBRE NÓS
+  ============================================================ -->
+  <section class="about" id="sobre">
+    <div class="container about__inner">
+      <div class="about__image reveal-left">
+        <img src="assets/images/petshop-interior.jpg" alt="Interior moderno do PataVida Pet Shop" loading="lazy" />
+        <div class="about__badge">
+          <strong>+8</strong>
+          <span>anos de<br/>experiência</span>
+        </div>
+      </div>
+
+      <div class="about__content reveal-right">
+        <p class="section-tag">Nossa história</p>
+        <h2 class="section-title">Amor pelos animais<br /><em>desde o primeiro dia</em></h2>
+        <p>A PataVida nasceu da paixão genuína pelos animais. Fundada por uma equipe de amantes de pets, nossa missão sempre foi oferecer o mais alto padrão de cuidado, combinando técnica, carinho e produtos de qualidade.</p>
+        <p>Acreditamos que cada animal tem uma personalidade única — por isso, nosso atendimento é sempre individualizado, respeitando o tempo e o temperamento de cada pet.</p>
+
+        <div class="about__features">
+          <div class="about__feature">
+            <span class="feature-check">✓</span>
+            <div>
+              <strong>Profissionais certificados</strong>
+              <p>Equipe treinada e apaixonada por animais</p>
+            </div>
+          </div>
+          <div class="about__feature">
+            <span class="feature-check">✓</span>
+            <div>
+              <strong>Produtos premium</strong>
+              <p>Somente produtos testados e de alta qualidade</p>
+            </div>
+          </div>
+          <div class="about__feature">
+            <span class="feature-check">✓</span>
+            <div>
+              <strong>Ambiente sem estresse</strong>
+              <p>Espaço pensado para o conforto do seu pet</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20PataVida." target="_blank" class="btn btn--primary">Fale conosco</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       POR QUE NOS ESCOLHER
+  ============================================================ -->
+  <section class="why-us">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-tag">Nossos diferenciais</p>
+        <h2 class="section-title">Por que escolher<br /><em>a PataVida?</em></h2>
+      </div>
+
+      <div class="why-us__grid">
+        <div class="why-card reveal-card">
+          <div class="why-card__icon">
+            <img src="assets/images/vet-beagle.jpg" alt="Veterinário examinando Beagle" loading="lazy" />
+          </div>
+          <h3>Profissionais Especializados</h3>
+          <p>Nossa equipe conta com grooming certificados e profissionais com anos de experiência no cuidado animal.</p>
+        </div>
+
+        <div class="why-card reveal-card">
+          <div class="why-card__icon">
+            <img src="assets/images/pug-cat.jpg" alt="Pets felizes e saudáveis" loading="lazy" />
+          </div>
+          <h3>Ambiente Seguro & Acolhedor</h3>
+          <p>Espaço higienizado, com separação por porte e temperamento. Seu pet se sentirá em casa.</p>
+        </div>
+
+        <div class="why-card reveal-card">
+          <div class="why-card__icon">
+            <img src="assets/images/yorkshire.jpg" alt="Yorkshire cuidado com atenção" loading="lazy" />
+          </div>
+          <h3>Cuidado Individual</h3>
+          <p>Cada atendimento é único. Adaptamos nossos serviços às necessidades específicas de cada animal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GALERIA
+  ============================================================ -->
+  <section class="gallery" id="galeria">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-tag">Nosso trabalho</p>
+        <h2 class="section-title">Momentos que<br /><em>encantam</em></h2>
+        <p class="section-desc">Cada foto conta uma história de cuidado, amor e dedicação ao bem-estar animal.</p>
+      </div>
+    </div>
+
+    <div class="gallery__grid">
+      <div class="gallery__item gallery__item--tall reveal-fade">
+        <img src="assets/images/golden-bath.jpg" alt="Golden Retriever no banho" loading="lazy" />
+        <div class="gallery__overlay"><span>Banho Completo</span></div>
+      </div>
+      <div class="gallery__item reveal-fade">
+        <img src="assets/images/maine-coon.jpg" alt="Maine Coon elegante" loading="lazy" />
+        <div class="gallery__overlay"><span>Cuidados Especiais</span></div>
+      </div>
+      <div class="gallery__item reveal-fade">
+        <img src="assets/images/persian-cat.jpg" alt="Gato Persa sendo escovado" loading="lazy" />
+        <div class="gallery__overlay"><span>Escovação & Higiene</span></div>
+      </div>
+      <div class="gallery__item gallery__item--wide reveal-fade">
+        <img src="assets/images/pug-cat.jpg" alt="Pug e gato brincando" loading="lazy" />
+        <div class="gallery__overlay"><span>Ambiente Feliz</span></div>
+      </div>
+      <div class="gallery__item reveal-fade">
+        <img src="assets/images/yorkshire.jpg" alt="Yorkshire Terrier bem cuidado" loading="lazy" />
+        <div class="gallery__overlay"><span>Tosa Artística</span></div>
+      </div>
+      <div class="gallery__item reveal-fade">
+        <img src="assets/images/vet-beagle.jpg" alt="Beagle sendo examinado" loading="lazy" />
+        <div class="gallery__overlay"><span>Saúde & Bem-Estar</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA / AGENDAMENTO
+  ============================================================ -->
+  <section class="cta-section reveal">
+    <div class="cta-section__bg">
+      <img src="assets/images/golden-bath.jpg" alt="" aria-hidden="true" />
+      <div class="cta-section__overlay"></div>
+    </div>
+    <div class="container cta-section__content">
+      <p class="section-tag">Agende agora</p>
+      <h2>Pronto para cuidar<br /><em>do seu melhor amigo?</em></h2>
+      <p>Entre em contato pelo WhatsApp e garanta o melhor atendimento para o seu pet. Resposta rápida, agendamento fácil.</p>
+      <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço%20para%20meu%20pet." target="_blank" class="btn btn--primary btn--xl">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Agendar via WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTATO
+  ============================================================ -->
+  <section class="contact" id="contato">
+    <div class="container contact__inner">
+      <div class="section-header reveal">
+        <p class="section-tag">Fale conosco</p>
+        <h2 class="section-title">Estamos aqui<br /><em>para você</em></h2>
+      </div>
+
+      <div class="contact__grid">
+        <a href="https://wa.me/5511999999999" target="_blank" class="contact-card reveal-card" aria-label="Falar no WhatsApp">
+          <div class="contact-card__icon contact-card__icon--whatsapp">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </div>
+          <h3>WhatsApp</h3>
+          <p>(11) 99999-9999</p>
+          <span>Disponível agora</span>
+        </a>
+
+        <a href="https://instagram.com/patavida.petshop" target="_blank" class="contact-card reveal-card" aria-label="Seguir no Instagram">
+          <div class="contact-card__icon contact-card__icon--instagram">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </div>
+          <h3>Instagram</h3>
+          <p>@patavida.petshop</p>
+          <span>Siga-nos</span>
+        </a>
+
+        <div class="contact-card contact-card--info reveal-card">
+          <div class="contact-card__icon contact-card__icon--location">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <h3>Endereço</h3>
+          <p>Rua dos Animais, 123<br />São Paulo — SP</p>
+          <span>Abrir no Maps</span>
+        </div>
+
+        <div class="contact-card contact-card--info reveal-card">
+          <div class="contact-card__icon contact-card__icon--clock">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <h3>Horário</h3>
+          <p>Seg–Sex: 8h às 19h<br />Sáb: 8h às 17h</p>
+          <span>Dom: fechado</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#inicio" class="navbar__logo">
+          <span class="logo-icon">🐾</span>
+          <span class="logo-text">PataVida<span class="logo-accent">.</span></span>
+        </a>
+        <p>Cuidado, amor e bem-estar para o seu melhor amigo. Somos apaixonados por animais e dedicados a oferecer o melhor serviço.</p>
+        <div class="footer__social">
+          <a href="https://wa.me/5511999999999" target="_blank" class="social-btn social-btn--whatsapp" aria-label="WhatsApp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </a>
+          <a href="https://instagram.com/patavida.petshop" target="_blank" class="social-btn social-btn--instagram" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__links">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#sobre">Sobre nós</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__links">
+        <h4>Serviços</h4>
+        <ul>
+          <li><a href="https://wa.me/5511999999999?text=Banho" target="_blank">Banho Completo</a></li>
+          <li><a href="https://wa.me/5511999999999?text=Tosa" target="_blank">Tosa Especializada</a></li>
+          <li><a href="https://wa.me/5511999999999?text=Higiene" target="_blank">Higiene Oral</a></li>
+          <li><a href="https://wa.me/5511999999999?text=Unhas" target="_blank">Corte de Unhas</a></li>
+          <li><a href="https://wa.me/5511999999999?text=Especiais" target="_blank">Cuidados Especiais</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__contact">
+        <h4>Contato</h4>
+        <p>📍 Rua dos Animais, 123<br />São Paulo — SP</p>
+        <p>📞 (11) 99999-9999</p>
+        <p>🕐 Seg–Sex: 8h–19h<br />Sáb: 8h–17h</p>
+        <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço." target="_blank" class="btn btn--primary btn--sm footer__cta">
+          Agendar agora
+        </a>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© 2026 PataVida Pet Shop. Todos os direitos reservados. Feito com ❤️ para pets e seus tutores.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp float button -->
+  <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço." target="_blank" class="whatsapp-float" aria-label="Falar no WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+
