@@ -41,11 +41,19 @@
   ============================================================ -->
   <section class="hero" id="inicio">
     <div class="hero__video-wrap">
-      <video class="hero__video" autoplay muted loop playsinline webkit-playsinline preload="auto">
-        <source src="assets/video/hero-video.mp4" type="video/mp4" />
-      </video>
+      <video class="hero__video" src="assets/video/hero-video.mp4" autoplay muted loop playsinline webkit-playsinline preload="auto"></video>
       <div class="hero__overlay"></div>
     </div>
+    <script>
+      (function(){
+        var v=document.querySelector('.hero__video');
+        if(!v)return;
+        v.muted=true;v.defaultMuted=true;v.playsInline=true;
+        v.setAttribute('muted','');v.setAttribute('playsinline','');
+        var p=v.play();
+        if(p&&p.catch)p.catch(function(){});
+      })();
+    </script>
 
     <div class="hero__content container">
       <p class="hero__tag animate-hero" data-delay="0">🐾 Cuidado que faz diferença</p>

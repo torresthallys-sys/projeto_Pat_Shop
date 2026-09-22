@@ -153,61 +153,29 @@
   const heroVideo = qs('.hero__video');
 
   if (heroVideo) {
-    // Forçar todas as propriedades necessárias via JS
-    heroVideo.muted        = true;
-    heroVideo.defaultMuted = true;
-    heroVideo.playsInline  = true;
-    heroVideo.loop         = true;
-    heroVideo.setAttribute('muted', '');
-    heroVideo.setAttribute('playsinline', '');
-    heroVideo.setAttribute('webkit-playsinline', '');
-
-    let playAttempts = 0;
-
-    const startPlay = () => {
-      if (heroVideo.paused && playAttempts < 10) {
-        playAttempts++;
+    // Fallback simples: se o autoplay nativo + inline script não funcionaram,
+    // tenta play() quando houver dados suficientes. Não chama .load() para não
+    // cancelar o autoplay que o navegador já pode ter iniciado.
+    const tryPlay = () => {
+      if (heroVideo.paused) {
         heroVideo.muted = true;
         const p = heroVideo.play();
-        if (p !== undefined) {
-          p.then(() => { playAttempts = 0; }).catch(() => {
-            // Tenta novamente após 300ms se falhar
-            setTimeout(startPlay, 300);
-          });
-        }
+        if (p !== undefined) p.catch(() => {});
       }
     };
 
-    // Forçar carregamento e iniciar imediatamente
-    heroVideo.load();
-    startPlay();
-
-    // Múltiplos eventos de gatilho para garantir início
-    heroVideo.addEventListener('loadedmetadata',  startPlay, { once: true });
-    heroVideo.addEventListener('loadeddata',      startPlay, { once: true });
-    heroVideo.addEventListener('canplay',         startPlay, { once: true });
-    heroVideo.addEventListener('canplaythrough',  startPlay, { once: true });
-    window.addEventListener('pageshow',           startPlay);
+    // Gatilhos adicionais (não interferem se já estiver tocando)
+    heroVideo.addEventListener('canplay', tryPlay, { once: true });
+    window.addEventListener('pageshow', tryPlay);
     document.addEventListener('visibilitychange', () => {
-      if (!document.hidden) startPlay();
+      if (!document.hidden) tryPlay();
     });
 
-    // Garante loop contínuo sem travamentos em dispositivos móveis
+    // Garante loop contínuo
     heroVideo.addEventListener('ended', () => {
       heroVideo.currentTime = 0;
-      playAttempts = 0;
-      startPlay();
+      tryPlay();
     });
-
-    if (window.matchMedia('(max-width: 767px)').matches) {
-      const startMobileAutoplay = () => {
-        heroVideo.muted = true;
-        heroVideo.play().catch(() => {});
-      };
-
-      heroVideo.addEventListener('canplay', startMobileAutoplay);
-      window.addEventListener('pageshow', startMobileAutoplay);
-    }
 
     // Parallax suave no vídeo do hero em Desktop e Mobile
     let parallaxTicking = false;
