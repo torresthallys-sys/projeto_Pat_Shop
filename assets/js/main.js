@@ -199,6 +199,16 @@
       startPlay();
     });
 
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      const startMobileAutoplay = () => {
+        heroVideo.muted = true;
+        heroVideo.play().catch(() => {});
+      };
+
+      heroVideo.addEventListener('canplay', startMobileAutoplay);
+      window.addEventListener('pageshow', startMobileAutoplay);
+    }
+
     // Parallax suave no vídeo do hero em Desktop e Mobile
     let parallaxTicking = false;
 
