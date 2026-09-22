@@ -148,11 +148,57 @@
   });
 
   /* ──────────────────────────────────────────────────────────
-     5. PARALLAX — suave no vídeo do hero em Desktop e Mobile
+     5. HERO VIDEO AUTOPLAY & PARALLAX (Desktop & Mobile)
   ─────────────────────────────────────────────────────────── */
   const heroVideo = qs('.hero__video');
 
   if (heroVideo) {
+    // Garantir propriedades essenciais para autoplay no mobile (iOS e Android)
+    heroVideo.muted = true;
+    heroVideo.defaultMuted = true;
+    heroVideo.playsInline = true;
+    heroVideo.loop = true;
+    heroVideo.setAttribute('muted', '');
+    heroVideo.setAttribute('playsinline', '');
+    heroVideo.setAttribute('webkit-playsinline', '');
+
+    const tryPlayVideo = () => {
+      heroVideo.muted = true;
+      const playPromise = heroVideo.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Fallback para navegadores mobile em modo de economia de energia
+          const startOnInteraction = () => {
+            heroVideo.muted = true;
+            heroVideo.play().catch(() => {});
+            ['touchstart', 'touchend', 'scroll', 'click'].forEach(evt => {
+              window.removeEventListener(evt, startOnInteraction);
+            });
+          };
+          ['touchstart', 'touchend', 'scroll', 'click'].forEach(evt => {
+            window.addEventListener(evt, startOnInteraction, { passive: true });
+          });
+        });
+      }
+    };
+
+    // Dispara a reprodução
+    tryPlayVideo();
+
+    // Garante inicialização ao carregar dados do vídeo e na alternância de abas
+    heroVideo.addEventListener('loadedmetadata', tryPlayVideo, { once: true });
+    heroVideo.addEventListener('canplay', tryPlayVideo, { once: true });
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) tryPlayVideo();
+    });
+
+    // Garante loop contínuo sem travamentos em dispositivos móveis
+    heroVideo.addEventListener('ended', () => {
+      heroVideo.currentTime = 0;
+      tryPlayVideo();
+    });
+
+    // Parallax suave no vídeo do hero em Desktop e Mobile
     let parallaxTicking = false;
 
     const applyParallax = () => {
