@@ -41,9 +41,15 @@
   ============================================================ -->
   <section class="hero" id="inicio">
     <div class="hero__video-wrap">
-      <video class="hero__video" autoplay muted loop playsinline webkit-playsinline preload="auto">
+      <video class="hero__video" src="assets/video/hero-video.mp4" autoplay muted loop playsinline webkit-playsinline preload="auto">
         <source src="assets/video/hero-video.mp4" type="video/mp4" />
       </video>
+      <script>
+        (function(){
+          var v = document.querySelector('.hero__video');
+          if (v) { v.muted = true; v.defaultMuted = true; v.playsInline = true; }
+        })();
+      </script>
       <div class="hero__overlay"></div>
     </div>
 

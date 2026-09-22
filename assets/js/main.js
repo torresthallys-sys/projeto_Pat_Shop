@@ -162,40 +162,35 @@
     heroVideo.setAttribute('playsinline', '');
     heroVideo.setAttribute('webkit-playsinline', '');
 
-    const tryPlayVideo = () => {
+    const playVideo = () => {
       heroVideo.muted = true;
-      const playPromise = heroVideo.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          // Fallback para navegadores mobile em modo de economia de energia
-          const startOnInteraction = () => {
-            heroVideo.muted = true;
-            heroVideo.play().catch(() => {});
-            ['touchstart', 'touchend', 'scroll', 'click'].forEach(evt => {
-              window.removeEventListener(evt, startOnInteraction);
-            });
-          };
-          ['touchstart', 'touchend', 'scroll', 'click'].forEach(evt => {
-            window.addEventListener(evt, startOnInteraction, { passive: true });
-          });
-        });
+      if (heroVideo.paused) {
+        const p = heroVideo.play();
+        if (p !== undefined) {
+          p.catch(() => {});
+        }
       }
     };
 
-    // Dispara a reprodução
-    tryPlayVideo();
+    // Inicia assim que houver dados de mídia disponíveis
+    if (heroVideo.readyState >= 2) {
+      playVideo();
+    } else {
+      heroVideo.addEventListener('loadeddata', playVideo, { once: true });
+      heroVideo.addEventListener('canplay', playVideo, { once: true });
+      heroVideo.addEventListener('canplaythrough', playVideo, { once: true });
+    }
 
-    // Garante inicialização ao carregar dados do vídeo e na alternância de abas
-    heroVideo.addEventListener('loadedmetadata', tryPlayVideo, { once: true });
-    heroVideo.addEventListener('canplay', tryPlayVideo, { once: true });
+    // Reforça na conclusão do carregamento e na reativação da página
+    window.addEventListener('pageshow', playVideo);
     document.addEventListener('visibilitychange', () => {
-      if (!document.hidden) tryPlayVideo();
+      if (!document.hidden) playVideo();
     });
 
     // Garante loop contínuo sem travamentos em dispositivos móveis
     heroVideo.addEventListener('ended', () => {
       heroVideo.currentTime = 0;
-      tryPlayVideo();
+      playVideo();
     });
 
     // Parallax suave no vídeo do hero em Desktop e Mobile
