@@ -153,18 +153,13 @@
   const heroVideo = qs('.hero__video');
 
   if (heroVideo) {
-    // Garantir propriedades essenciais para autoplay no mobile (iOS e Android)
     heroVideo.muted = true;
     heroVideo.defaultMuted = true;
     heroVideo.playsInline = true;
-    heroVideo.loop = true;
-    heroVideo.setAttribute('muted', '');
-    heroVideo.setAttribute('playsinline', '');
-    heroVideo.setAttribute('webkit-playsinline', '');
 
-    const playVideo = () => {
-      heroVideo.muted = true;
+    const startPlay = () => {
       if (heroVideo.paused) {
+        heroVideo.muted = true;
         const p = heroVideo.play();
         if (p !== undefined) {
           p.catch(() => {});
@@ -172,25 +167,16 @@
       }
     };
 
-    // Inicia assim que houver dados de mídia disponíveis
-    if (heroVideo.readyState >= 2) {
-      playVideo();
-    } else {
-      heroVideo.addEventListener('loadeddata', playVideo, { once: true });
-      heroVideo.addEventListener('canplay', playVideo, { once: true });
-      heroVideo.addEventListener('canplaythrough', playVideo, { once: true });
-    }
-
-    // Reforça na conclusão do carregamento e na reativação da página
-    window.addEventListener('pageshow', playVideo);
-    document.addEventListener('visibilitychange', () => {
-      if (!document.hidden) playVideo();
-    });
+    // Inicia de forma transparente caso o autoplay nativo não tenha começado
+    startPlay();
+    heroVideo.addEventListener('loadedmetadata', startPlay, { once: true });
+    heroVideo.addEventListener('canplay', startPlay, { once: true });
+    window.addEventListener('pageshow', startPlay);
 
     // Garante loop contínuo sem travamentos em dispositivos móveis
     heroVideo.addEventListener('ended', () => {
       heroVideo.currentTime = 0;
-      playVideo();
+      startPlay();
     });
 
     // Parallax suave no vídeo do hero em Desktop e Mobile
