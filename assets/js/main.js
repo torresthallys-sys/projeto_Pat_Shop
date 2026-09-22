@@ -153,29 +153,49 @@
   const heroVideo = qs('.hero__video');
 
   if (heroVideo) {
-    heroVideo.muted = true;
+    // Forçar todas as propriedades necessárias via JS
+    heroVideo.muted        = true;
     heroVideo.defaultMuted = true;
-    heroVideo.playsInline = true;
+    heroVideo.playsInline  = true;
+    heroVideo.loop         = true;
+    heroVideo.setAttribute('muted', '');
+    heroVideo.setAttribute('playsinline', '');
+    heroVideo.setAttribute('webkit-playsinline', '');
+
+    let playAttempts = 0;
 
     const startPlay = () => {
-      if (heroVideo.paused) {
+      if (heroVideo.paused && playAttempts < 10) {
+        playAttempts++;
         heroVideo.muted = true;
         const p = heroVideo.play();
         if (p !== undefined) {
-          p.catch(() => {});
+          p.then(() => { playAttempts = 0; }).catch(() => {
+            // Tenta novamente após 300ms se falhar
+            setTimeout(startPlay, 300);
+          });
         }
       }
     };
 
-    // Inicia de forma transparente caso o autoplay nativo não tenha começado
+    // Forçar carregamento e iniciar imediatamente
+    heroVideo.load();
     startPlay();
-    heroVideo.addEventListener('loadedmetadata', startPlay, { once: true });
-    heroVideo.addEventListener('canplay', startPlay, { once: true });
-    window.addEventListener('pageshow', startPlay);
+
+    // Múltiplos eventos de gatilho para garantir início
+    heroVideo.addEventListener('loadedmetadata',  startPlay, { once: true });
+    heroVideo.addEventListener('loadeddata',      startPlay, { once: true });
+    heroVideo.addEventListener('canplay',         startPlay, { once: true });
+    heroVideo.addEventListener('canplaythrough',  startPlay, { once: true });
+    window.addEventListener('pageshow',           startPlay);
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) startPlay();
+    });
 
     // Garante loop contínuo sem travamentos em dispositivos móveis
     heroVideo.addEventListener('ended', () => {
       heroVideo.currentTime = 0;
+      playAttempts = 0;
       startPlay();
     });
 
